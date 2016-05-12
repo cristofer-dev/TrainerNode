@@ -1,3 +1,4 @@
 var servidor = require("./servidor");
+var controlador = require("./controlador");
 
-servidor.iniciar();
+servidor.iniciar(controlador.enrutar);
