@@ -9,10 +9,10 @@ function iniciar(enrutar,manejador){
 
 		console.log("Conección establecida");
 
-		enrutar(manejador,ruta);
-
+		var contenido = enrutar(manejador,ruta);
+	
 		salida.writeHead(200,{"Content-Type":"text/html"});
-		salida.write("<h1>Servidor Encendido... \o/</h1>")
+		salida.write(contenido);
 		salida.end();
 	}
 	servidor.createServer(enciendeServidor).listen(8888);
