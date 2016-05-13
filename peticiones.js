@@ -1,5 +1,9 @@
 function inicio(){
 	console.log("Has entrado en la página de inicio");
+
+	var ahora = new Date().getTime();
+	while(new Date().getTime() < ahora + 10000);
+
 	return "Inicio";
 }
 
