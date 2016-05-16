@@ -9,14 +9,11 @@ function iniciar(enrutar,manejador){
 
 		console.log("Conección establecida");
 
-		var contenido = enrutar(manejador,ruta);
+		var contenido = enrutar(manejador,ruta,salida);
 
 		var registro = fs.createWriteStream('log.txt',{'flags':'a'});	
 		registro.write(ruta + '\n');
 
-		salida.writeHead(200,{"Content-Type":"text/html"});
-		salida.write(contenido);
-		salida.end();
 	}
 	servidor.createServer(enciendeServidor).listen(8888);
 }

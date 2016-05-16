@@ -1,8 +1,8 @@
-function enrutar(manejador,ruta){
+function enrutar(manejador,ruta,respuesta){
 	console.log("Accediendo a "+ruta);
 
 	if(typeof manejador[ruta]==='function'){
-		return manejador[ruta]();
+		manejador[ruta](respuesta);
 	}else{
 		console.log("No Existe una funcion para esa ruta");
 	}

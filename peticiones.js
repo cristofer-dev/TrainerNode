@@ -1,24 +1,29 @@
-function inicio(){
+function inicio(respuesta){
 	console.log("Has entrado en la página de inicio");
-
-	var ahora = new Date().getTime();
-	while(new Date().getTime() < ahora + 10000);
-
-	return "Inicio";
+    respuesta.writeHead(200,{"Content-Type":"text/html"});
+    respuesta.write("Esta es la página de inicio");
+    respuesta.end();
 }
 
-function pagina1(){ 
-        console.log("Has entrado en la página 1");
-        return "Pagina 1";
+function pagina1(respuesta){ 
+    console.log("Has entrado en la página 1");   
+    respuesta.writeHead(200,{"Content-Type":"text/html"});
+    respuesta.write("Esta es la Página 1");
+    respuesta.end();
 }
 
-function pagina2(){ 
-        console.log("Has entrado en la página 2");
-        return "Pagina 2";
+function pagina2(respuesta){ 
+    console.log("Has entrado en la página 2");
+    respuesta.writeHead(200,{"Content-Type":"text/html"});
+    respuesta.write("Esta es la Página 2");
+    respuesta.end();
 }
 
-function favicon(){
+function favicon(respuesta){
 	console.log("Se ha pedido el favicon");
+    respuesta.writeHead(200,{"Content-Type":"text/html"});
+    respuesta.write("");
+    respuesta.end(respuesta);
 }
 
 exports.inicio = inicio;
