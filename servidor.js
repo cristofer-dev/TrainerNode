@@ -9,7 +9,14 @@ function iniciar(enrutar,manejador){
 
 		console.log("Conección establecida");
 
-		var contenido = enrutar(manejador,ruta,salida);
+		// var contenido = enrutar(manejador,ruta,salida);
+
+		var index = fs.readFileSync("html/"+ruta+".html");
+
+		salida.writeHead(200,{"Content-Type":"text/html"});
+		salida.write(index);
+		salida.end();
+
 
 		var registro = fs.createWriteStream('log.txt',{'flags':'a'});	
 		registro.write(ruta + '\n');
